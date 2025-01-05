@@ -4,6 +4,8 @@ from tests.check_indentation import check_indentation
 from tests.check_linebreak import check_linebreak
 from tests.check_condition import check_condition
 from tests.check_php_import import check_php_import
+from tests.check_php_function_header import check_php_function_header
+from tests.check_php_function_type import check_php_function_type
 
 def checkPHP(filePath):
 	lines = getLines(filePath)
@@ -16,4 +18,6 @@ def checkPHP(filePath):
 			check_linebreak(filePath, i, line, lines)
 			# check_php_import(filePath, i, line, lines)
 			check_condition(filePath, i, line)
+			check_php_function_header(filePath, i, line)
+			check_php_function_type(filePath, i, line)
 		i+=1
