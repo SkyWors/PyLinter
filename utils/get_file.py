@@ -15,6 +15,7 @@ def getFile(path, excludeFolder):
 			checkPHP(path)
 		if ".js" in path:
 			if ".json" not in path:
-				checkJS(path)
+				if ".min." not in path:
+					checkJS(path)
 		if ".py" in path:
 			checkPython(path)

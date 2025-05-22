@@ -6,6 +6,7 @@ from tests.check_condition import check_condition
 from tests.check_php_import import check_php_import
 from tests.check_php_function_header import check_php_function_header
 from tests.check_php_function_type import check_php_function_type
+from tests.check_vardump import check_vardump
 
 def checkPHP(filePath):
 	lines = getLines(filePath)
@@ -20,4 +21,5 @@ def checkPHP(filePath):
 			check_condition(filePath, i, line)
 			check_php_function_header(filePath, i, line)
 			check_php_function_type(filePath, i, line)
+			check_vardump(filePath, i, line)
 		i+=1
